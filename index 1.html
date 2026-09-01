@@ -81,7 +81,7 @@
       min-height: 500px;
     }
 
-    /* Todas as caixas ficam escondidas */
+    /* As caixas começam escondidas */
     .caixa {
       display: none;
       background: var(--branco);
@@ -92,7 +92,7 @@
       animation: aparecer 0.3s ease;
     }
 
-    /* Caixa que estiver selecionada aparece */
+    /* Mostra somente a caixa selecionada */
     .caixa.ativa {
       display: block;
     }
@@ -168,6 +168,7 @@
 
       <nav>
         <ul>
+
           <li>
             <a href="#faculdade" onclick="mostrar('faculdade', this)">
               Faculdade
@@ -191,6 +192,7 @@
               Currículo
             </a>
           </li>
+
         </ul>
       </nav>
 
@@ -202,6 +204,7 @@
 
     <!-- FACULDADE -->
     <section class="caixa" id="faculdade">
+
       <h2>Faculdade</h2>
 
       <div class="texto">
@@ -210,49 +213,55 @@
         </p>
 
         <p>
-          Fale sobre o curso, profissão, universidade e seus objetivos
-          acadêmicos.
+          Fale sobre o curso, a universidade, a profissão que deseja
+          seguir e seus objetivos acadêmicos.
         </p>
       </div>
+
     </section>
 
 
     <!-- INVESTIMENTOS -->
     <section class="caixa" id="investimentos">
+
       <h2>Investimentos</h2>
 
       <div class="texto">
         <p>
-          ESCREVA AQUI SOBRE SEUS PLANOS FINANCEIROS.
+          ESCREVA AQUI SOBRE SEUS PLANOS DE INVESTIMENTOS.
         </p>
 
         <p>
-          Você pode escrever sobre economia, investimentos,
-          objetivos financeiros e planejamento para o futuro.
+          Fale sobre seus objetivos financeiros, como pretende guardar
+          dinheiro e quais são seus planos para o futuro.
         </p>
       </div>
+
     </section>
 
 
     <!-- CASA DOS SONHOS -->
     <section class="caixa" id="casa">
+
       <h2>Casa dos Sonhos</h2>
 
       <div class="texto">
         <p>
-          ESCREVA AQUI COMO SERIA A SUA CASA DOS SONHOS.
+          ESCREVA AQUI SOBRE A SUA CASA DOS SONHOS.
         </p>
 
         <p>
-          Descreva o lugar onde gostaria de morar, características
-          da casa, localização e seus planos para conquistá-la.
+          Descreva como seria sua casa, onde gostaria de morar,
+          quais características ela teria e como pretende conquistá-la.
         </p>
       </div>
+
     </section>
 
 
     <!-- CURRÍCULO -->
     <section class="caixa" id="curriculo">
+
       <h2>Currículo</h2>
 
       <div class="texto">
@@ -261,10 +270,13 @@
         </p>
 
         <p>
-          Coloque abaixo o link para acessar seu currículo:
+          Clique no botão abaixo para acessar seu currículo:
         </p>
 
-        <!-- COLE O LINK DO SEU CURRÍCULO NO href -->
+        <!--
+          TROQUE O TEXTO DENTRO DO href PELO LINK DO SEU CURRÍCULO
+        -->
+
         <a
           class="link-curriculo"
           href="COLE_AQUI_O_LINK_DO_SEU_CURRICULO"
@@ -272,7 +284,9 @@
         >
           Acessar meu currículo
         </a>
+
       </div>
+
     </section>
 
   </main>
@@ -294,22 +308,26 @@
         caixa.classList.remove('ativa');
       });
 
-      // Remove o destaque de todos os botões
+
+      // Remove o destaque dos botões
       const botoes = document.querySelectorAll('nav a');
 
       botoes.forEach(function(botao) {
         botao.classList.remove('ativo');
       });
 
-      // Mostra a caixa escolhida
+
+      // Mostra somente a caixa selecionada
       const caixaSelecionada = document.getElementById(id);
 
       if (caixaSelecionada) {
         caixaSelecionada.classList.add('ativa');
       }
 
-      // Destaca o botão escolhido
+
+      // Destaca o botão selecionado
       botao.classList.add('ativo');
+
     }
 
   </script>
