@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Projeto de Vida</title>
+
+  <style>
+    :root {
+      --preto: #000000;
+      --fundo: #f6f6f6;
+      --branco: #ffffff;
+      --texto: #222222;
+      --cinza: #6b6b6b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: var(--preto);
+      color: white;
+      padding: 25px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    main {
+      padding: 40px 0;
+    }
+
+    .caixa {
+      background: var(--branco);
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .caixa h2 {
+      color: var(--preto);
+      margin-top: 0;
+    }
+
+    .texto {
+      color: var(--cinza);
+      min-height: 100px;
+    }
+
+    .link-curriculo {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: var(--preto);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .link-curriculo:hover {
+      background: #333333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: var(--cinza);
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav a {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+
+      <div class="brand">
+        Projeto de Vida
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#faculdade">Faculdade</a></li>
+          <li><a href="#investimentos">Investimentos</a></li>
+          <li><a href="#casa">Casa dos Sonhos</a></li>
+          <li><a href="#curriculo">Currículo</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <section class="caixa">
+      <h2>Meu Projeto de Vida</h2>
+
+      <div class="texto">
+        <p>
+          ESCREVA AQUI O NOVO TEXTO DO SEU PROJETO DE VIDA.
+        </p>
+
+        <p>
+          Você pode apresentar seus objetivos, sonhos, planos
+          para o futuro e o que pretende conquistar ao longo da vida.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="caixa" id="faculdade">
+      <h2>Faculdade</h2>
+
+      <div class="texto">
+        <p>
+           Preteno fazer faculdae de Ciências Contábeis.
+        </p>
+
+        <p>
+           A princípio a faaculdade que escolhi era a UFPR, mas a dstância
+          acaba dificultando  
+
+        </p>
+      </div>
+    </section>
+
+
+    <section class="caixa" id="investimentos">
+      <h2>Investimentos</h2>
+
+      <div class="texto">
+        <p>
+          ESCREVA AQUI SOBRE SEUS PLANOS FINANCEIROS.
+        </p>
+
+        <p>
+          Você pode escrever sobre economia, investimentos,
+          objetivos financeiros e planejamento para o futuro.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="caixa" id="casa">
+      <h2>Casa dos Sonhos</h2>
+
+      <div class="texto">
+        <p>
+          ESCREVA AQUI COMO SERIA A SUA CASA DOS SONHOS.
+        </p>
+
+        <p>
+          Descreva o lugar onde gostaria de morar, características
+          da casa, localização e seus planos para conquistá-la.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="caixa" id="curriculo">
+      <h2>Currículo</h2>
+
+      <div class="texto">
+        <p>
+          ESCREVA AQUI UMA BREVE APRESENTAÇÃO SOBRE SEU CURRÍCULO.
+        </p>
+
+        <p>
+          Coloque abaixo o link para acessar seu currículo:
+        </p>
+
+        <a
+          class="link-curriculo"
+          href="COLE_AQUI_O_LINK_DO_SEU_CURRICULO"
+          target="_blank"
+        >
+          Acessar meu currículo
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    Projeto de Vida — Meu futuro, meus objetivos e meus sonhos.
+  </footer>
+
+</body>
+</html>
