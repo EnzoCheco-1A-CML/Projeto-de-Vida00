@@ -19,6 +19,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--fundo);
@@ -62,24 +66,35 @@
     nav a {
       color: white;
       text-decoration: none;
-      padding: 9px 12px;
+      padding: 10px 14px;
       border-radius: 8px;
+      transition: 0.2s;
     }
 
-    nav a:hover {
-      background: rgba(255,255,255,0.15);
+    nav a:hover,
+    nav a.ativo {
+      background: #333333;
     }
 
     main {
       padding: 40px 0;
+      min-height: 500px;
     }
 
+    /* Todas as caixas ficam escondidas */
     .caixa {
+      display: none;
       background: var(--branco);
-      padding: 25px;
+      padding: 30px;
       margin-bottom: 25px;
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      animation: aparecer 0.3s ease;
+    }
+
+    /* Caixa que estiver selecionada aparece */
+    .caixa.ativa {
+      display: block;
     }
 
     .caixa h2 {
@@ -89,7 +104,7 @@
 
     .texto {
       color: var(--cinza);
-      min-height: 100px;
+      line-height: 1.6;
     }
 
     .link-curriculo {
@@ -112,6 +127,18 @@
       color: var(--cinza);
     }
 
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 700px) {
       .nav {
         flex-direction: column;
@@ -120,6 +147,7 @@
 
       nav ul {
         flex-direction: column;
+        width: 100%;
       }
 
       nav a {
@@ -140,10 +168,29 @@
 
       <nav>
         <ul>
-          <li><a href="#faculdade">Faculdade</a></li>
-          <li><a href="#investimentos">Investimentos</a></li>
-          <li><a href="#casa">Casa dos Sonhos</a></li>
-          <li><a href="#curriculo">Currículo</a></li>
+          <li>
+            <a href="#faculdade" onclick="mostrar('faculdade', this)">
+              Faculdade
+            </a>
+          </li>
+
+          <li>
+            <a href="#investimentos" onclick="mostrar('investimentos', this)">
+              Investimentos
+            </a>
+          </li>
+
+          <li>
+            <a href="#casa" onclick="mostrar('casa', this)">
+              Casa dos Sonhos
+            </a>
+          </li>
+
+          <li>
+            <a href="#curriculo" onclick="mostrar('curriculo', this)">
+              Currículo
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -153,39 +200,24 @@
 
   <main class="container">
 
-    <section class="caixa">
-      <h2>Meu Projeto de Vida</h2>
-
-      <div class="texto">
-        <p>
-          ESCREVA AQUI O NOVO TEXTO DO SEU PROJETO DE VIDA.
-        </p>
-
-        <p>
-          Você pode apresentar seus objetivos, sonhos, planos
-          para o futuro e o que pretende conquistar ao longo da vida.
-        </p>
-      </div>
-    </section>
-
-
+    <!-- FACULDADE -->
     <section class="caixa" id="faculdade">
       <h2>Faculdade</h2>
 
       <div class="texto">
         <p>
-           Preteno fazer faculdae de Ciências Contábeis.
+          ESCREVA AQUI SOBRE A FACULDADE QUE VOCÊ PRETENDE FAZER.
         </p>
 
         <p>
-           A princípio a faaculdade que escolhi era a UFPR, mas a dstância
-          acaba dificultando  
-
+          Fale sobre o curso, profissão, universidade e seus objetivos
+          acadêmicos.
         </p>
       </div>
     </section>
 
 
+    <!-- INVESTIMENTOS -->
     <section class="caixa" id="investimentos">
       <h2>Investimentos</h2>
 
@@ -202,6 +234,7 @@
     </section>
 
 
+    <!-- CASA DOS SONHOS -->
     <section class="caixa" id="casa">
       <h2>Casa dos Sonhos</h2>
 
@@ -218,6 +251,7 @@
     </section>
 
 
+    <!-- CURRÍCULO -->
     <section class="caixa" id="curriculo">
       <h2>Currículo</h2>
 
@@ -230,6 +264,7 @@
           Coloque abaixo o link para acessar seu currículo:
         </p>
 
+        <!-- COLE O LINK DO SEU CURRÍCULO NO href -->
         <a
           class="link-curriculo"
           href="COLE_AQUI_O_LINK_DO_SEU_CURRICULO"
@@ -246,6 +281,38 @@
   <footer>
     Projeto de Vida — Meu futuro, meus objetivos e meus sonhos.
   </footer>
+
+
+  <script>
+
+    function mostrar(id, botao) {
+
+      // Esconde todas as caixas
+      const caixas = document.querySelectorAll('.caixa');
+
+      caixas.forEach(function(caixa) {
+        caixa.classList.remove('ativa');
+      });
+
+      // Remove o destaque de todos os botões
+      const botoes = document.querySelectorAll('nav a');
+
+      botoes.forEach(function(botao) {
+        botao.classList.remove('ativo');
+      });
+
+      // Mostra a caixa escolhida
+      const caixaSelecionada = document.getElementById(id);
+
+      if (caixaSelecionada) {
+        caixaSelecionada.classList.add('ativa');
+      }
+
+      // Destaca o botão escolhido
+      botao.classList.add('ativo');
+    }
+
+  </script>
 
 </body>
 </html>
